@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add User Form</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}"/>
+</head>
+<body>
+    <div class="container" style="text-align:center;">
+        <h1>Add User Form</h1>
+        <hr>
+        <center>
+            <form action="" th:action="@{/users/save}" method="POST" th:object="${user}">
+                <input type="text" th:field="*{firstName}" placeholder="First Name"
+                       class="form-control mb-4 col-4" required minlength="1" maxlength="15">
+                <input type="text" th:field="*{lastName}" placeholder="Last Name"
+                       class="form-control mb-4 col-4" required minlength="1" maxlength="15">
+                <input type="text" th:field="*{email}" placeholder="Email"
+                       class="form-control mb-4 col-4" required minlength="8" maxlength="40">
+                <button type="submit" class="btn btn-info col-2"> Save </button>
+                <a th:href = "@{/users}" class="btn btn-secondary col-2"> Back </a>
+            </form>
+        </center>
+        <hr>
+    </div>
+</body>
+</html>
