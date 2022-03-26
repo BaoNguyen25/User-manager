@@ -13,8 +13,20 @@
         <div style="color:white; margin:auto;"><h1>User Manager</h1></div>
     </nav>
 
-    <div th:if="${message}" class="alert alert-success" style="text-align:center;">
-        <h3 th:text="${message}"></h3>
+    <div th:if="${emailUsed}" class="alert alert-warning" style="text-align:center;">
+        <h3 th:text="${emailUsed}"></h3>
+    </div>
+
+    <div th:if="${updateMessage}" class="alert alert-danger" style="text-align:center;">
+        <h3 th:text="${updateMessage}"></h3>
+    </div>
+
+    <div th:if="${addMessage}" class="alert alert-success" style="text-align:center;">
+        <h3 th:text="${addMessage}"></h3>
+    </div>
+
+    <div th:if="${deleteMessage}" class="alert alert-danger" style="text-align:center;">
+        <h3 th:text="${deleteMessage}"></h3>
     </div>
 
     <div class="container-fluid text-center" style="padding: 50px;">

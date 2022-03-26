@@ -2,15 +2,17 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Add User Form</title>
+    <title>[[${pageTitle}]]</title>
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}"/>
 </head>
 <body>
     <div class="container" style="text-align:center;">
-        <h1>Add User Form</h1>
+        <h1>[[${pageTitle}]]</h1>
         <hr>
         <center>
             <form action="" th:action="@{/users/save}" method="POST" th:object="${user}">
+                <!-- Add hidden form field to handle update -->
+                <input type="hidden" th:field="*{id}">
                 <input type="text" th:field="*{firstName}" placeholder="First Name"
                        class="form-control mb-4 col-4" required minlength="1" maxlength="15">
                 <input type="text" th:field="*{lastName}" placeholder="Last Name"
